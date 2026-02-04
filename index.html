@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Toko Online</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- REGISTER -->
+<div id="registerBox" class="auth-box">
+    <h2>Daftar Akun</h2>
+    <input id="regUser" placeholder="Username">
+
+    <input id="regPass" type="password" placeholder="Password">
+    <button id="btnRegister">Daftar</button>
+    <p>Sudah punya akun? <span id="toLogin">Login</span></p>
+</div>
+
+<!-- LOGIN -->
+
+<div id="loginBox" class="auth-box hidden">
+    <h2>Login</h2>
+    <input id="loginUser" placeholder="Username">
+    <input id="loginPass" type="password" placeholder="Password">
+    <button id="btnLogin">Login</button>
+</div>
+
+<!-- WEBSITE -->
+<div id="website" class="hidden">
+
+<header>
+    <h1>Toko Online Saya</h1>
+    <nav>
+    <a href="#produk">Produk</a>
+    <a href="#keranjang">Keranjang (<span id="cartCount">0</span>)</a>
+    <a href="#laporan">Laporan</a>
+    <button id="darkBtn">🌙</button>
+    <button id="logoutBtn">Logout</button>
+</nav>
+</header>
+
+<section id="produk">
+<h2>Produk</h2>
+<div class="products">
+
+<div class="card">
+    <img src="p.jpg" alt="Produk A" class="product-img">
+    <h3>Sepatu futsal ortus</h3>
+    <p>Rp 500.000</p>
+    <div class="rating" data-produk="Produk A"></div>
+    <button onclick="addToCart('Produk A',50000)">Tambah</button>
+</div>
+
+<div class="card">
+    <img src="l.jpg" alt="Produk B" class="product-img">
+    <h3>kneeped dan elbow</h3>
+    <p>Rp 450.000</p>
+    <div class="rating" data-produk="Produk B"></div>
+    <button onclick="addToCart('Produk B',75000)">Tambah</button>
+</div>
+
+<div class="card">
+    <img src="o.jpg" alt="Produk C" class="product-img">
+    <h3>kaoskaki futsal</h3>
+    <p>Rp 25 000</p>
+    <div class="rating" data-produk="Produk C"></div>
+    <button onclick="addToCart('Produk C',100000)">Tambah</button>
+</div>
+
+</div>
+</section>
+
+<section id="keranjang">
+<h2>Keranjang</h2>
+<div id="cartList"></div>
+<h3>Total: Rp <span id="total">0</span></h3>
+
+<label>Metode Pembayaran</label>
+<select id="payment">
+    <option value="">-- Pilih --</option>
+    <option value="DANA">Transfer DANA</option>
+    <option value="COD">COD</option>
+</select>
+
+<div id="danaBox" class="hidden pay-box">
+    <p>Transfer ke DANA:</p>
+    <b>0857-1234-5678</b>
+    <p>Total: Rp <span id="danaTotal"></span></p>
+</div>
+
+<br>
+<button id="btnCheckout">Konfirmasi Pembayaran</button>
+</section>
+
+<section id="laporan">
+<h2>Laporan Penjualan</h2>
+<div id="report"></div>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
